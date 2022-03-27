@@ -5,7 +5,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "empty"
+rootProject.name = "app-theme"
 
 Properties properties = new Properties()
 properties.load(new File(settingsDir, 'local.properties').newDataInputStream())
@@ -14,3 +14,5 @@ if (appShell != null) {
     include ':Application'
     project(':Application').projectDir = new File(appShell)
 }
+include ':app-theme'
+project(":app-theme").projectDir = new File(rootDir, "theme")
