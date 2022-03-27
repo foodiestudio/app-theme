@@ -5,7 +5,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "app-theme"
+rootProject.name = "App-Theme"
 
 Properties properties = new Properties()
 File localConfig = new File(settingsDir, 'local.properties')
