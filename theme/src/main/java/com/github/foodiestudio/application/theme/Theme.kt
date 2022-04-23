@@ -1,10 +1,9 @@
 package com.github.foodiestudio.application.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,
@@ -38,10 +37,23 @@ fun ApplicationTheme(
         LightColorPalette
     }
 
-    MaterialTheme(
-        colors = colors,
-        typography = Typography,
-        shapes = Shapes,
-        content = content
-    )
+    CompositionLocalProvider(LocalAppTypography provides appTypography) {
+        MaterialTheme(
+            colors = colors,
+            shapes = Shapes,
+            content = content
+        )
+    }
+}
+
+object AppTheme {
+    val typography: AppTypography
+        @Composable
+        get() = LocalAppTypography.current
+    val colors: Colors
+        @Composable
+        get() = MaterialTheme.colors
+    val shapes: Shapes
+        @Composable
+        get() = MaterialTheme.shapes
 }
