@@ -15,13 +15,6 @@ setContent {
 }
 ```
 
-另外，Jetapck Compose 里使用 CompositionLocal 来实现 Theme-Overlay
+另外，Jetpack Compose 里使用 CompositionLocal 来实现 Theme-Overlay
 
 **注意:** 请使用 `AppTheme` 而不是直接使用 `MaterialTheme`
-
-### 构建说明
-当前仓库不包含 app 模块，需要在根目录下的 local.properties 声明 application 所在的路径
-
-```
-appShell=~/Projects/android-application
-```
